@@ -8,7 +8,9 @@ var Flexyscroll = function(element, options) {
 };
 
 Flexyscroll.defaults = {
-  
+  itemHeight: 30,
+  scrollDelay: 30,
+  scrollMode: 'throttle' // 'debounce'
 };
 
 Flexyscroll.prototype = {

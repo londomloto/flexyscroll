@@ -16,9 +16,23 @@ Flexyscroll.defaults = {
 Flexyscroll.prototype = {
   init: function(options) {
     this.options = $.extend(true, {}, Flexyscroll.defaults, options || {});
+    this.initComponent();
   },
-  render: function(data) {
+  initComponent: function() {
+    var opt = this.options;
     
+    this.element.addClass('fs');
+    this.wrapper = $('<div class="fs-wrapper">').appendTo(this.element);
+    
+    // reg events
+    this.element.off('scroll.fs').on('scroll.fs', $[opt.scrollMode](opt.scrollDelay, $.proxy(this.onScroll, this)));
+    this.render();
+  }
+  render: function() {
+    // TODO: break dulu...
+  },
+  onScroll: function() {
+    this.render();
   }
 };
 

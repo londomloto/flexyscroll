@@ -28,7 +28,7 @@ $.fn.flexyscroll = function() {
   var func, list;
   
   list = this.each(function(){
-    var obj = $.data(this, 'flexyscroll);
+    var obj = $.data(this, 'flexyscroll');
     if ( ! obj) {
       $.data(this, 'flexyscroll', (obj = new Flexyscroll(this, args[0])));
     }
